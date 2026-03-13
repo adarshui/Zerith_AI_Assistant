@@ -48,6 +48,7 @@ REQUIRE_CONFIRMATION_FOR = [
     "run_command",
     "modify_system",
     "install_package",
+    "edit_file",      # Self-modification requires confirmation
 ]
 
 # ──────────────────────────────────────────────
@@ -62,6 +63,8 @@ TTS_RATE = int(os.getenv("TTS_RATE", "175"))
 CHROMA_PERSIST_DIR = str(MEMORY_DIR / "chroma_db")
 PREFERENCES_FILE = str(MEMORY_DIR / "user_preferences.json")
 MEMORY_STORE_FILE = str(MEMORY_DIR / "memory_store.json")
+CONVERSATION_DB_FILE = str(MEMORY_DIR / "conversations.db")
+MAX_CONTEXT_MEMORIES = 5  # Number of relevant memories to load into context
 
 # ──────────────────────────────────────────────
 # Feature Flags

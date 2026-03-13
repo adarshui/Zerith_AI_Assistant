@@ -46,7 +46,7 @@ class AgentRouter:
 
         # Safety check for critical actions
         critical_key = f"{tool}_{action}" if tool != "system" else action
-        if tool == "system" or action in ("delete_file", "delete_folder"):
+        if tool == "system" or action in ("delete_file", "delete_folder", "edit_file", "write_file"):
             detail = f"{tool}.{action}({params})"
             if not check_and_confirm(critical_key, detail):
                 step.status = "failed"
